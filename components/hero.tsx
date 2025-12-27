@@ -45,12 +45,11 @@ export default function Hero() {
 
         <div className="hero-buttons flex gap-4 pt-4">
           <a
-            href="https://g89awrkuury5wuee.public.blob.vercel-storage.com/Resume.pdf"
+            href="https://g89awrkuury5wuee.public.blob.vercel-storage.com/Resume-TV0lxxfWTh2mx2AYn8lflwyjLsJDWB.pdf"
             target="_blank"
-            download="Resume_Tahasin_Tonmoy.pdf"
             className="px-6 py-2 bg-accent text-accent-foreground rounded font-medium hover:opacity-90 transition-opacity"
           >
-            Download Resume
+            Resume
           </a>
           <a
             href="#projects"
