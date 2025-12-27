@@ -71,7 +71,7 @@ export default function Projects() {
       actionLabel: "View Project",
       actionLabelDisable: false,
       disableButton: true,
-      repoLink: "https://github.com/tahasintonmoy2/iqnix-cms",
+      repoLink: "https://github.com/tahasintonmoy2/iqnixtv-cms",
       repoActionLabel: "View source code",
     },
   ];
