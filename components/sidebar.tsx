@@ -51,22 +51,6 @@ export default function Sidebar({
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="contact-actions flex gap-4 mb-4">
-          <motion.a
-            href="https://g89awrkuury5wuee.public.blob.vercel-storage.com/Resume.pdf"
-            target="_blank"
-            download="Resume_Tahasin_Tonmoy.pdf"
-            className="px-6 py-3 border border-border text-foreground rounded font-medium"
-            whileHover={{
-              borderColor: "var(--accent)",
-              backgroundColor: "var(--card)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          >
-            Download Resume
-          </motion.a>
-        </div>
         <div className="flex gap-4">
           {[
             {

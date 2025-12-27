@@ -1,9 +1,9 @@
 "use client"
 
-import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -28,25 +28,6 @@ export default function Experience() {
     },
   ]
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".experience-item", {
-        scrollTrigger: {
-          trigger: timelineRef.current,
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 0.6,
-        opacity: 0,
-        x: -30,
-        stagger: 0.2,
-        ease: "power2.out",
-      })
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
-
   return (
     <section ref={sectionRef} className="px-8 md:px-12 py-16 max-w-4xl">
       <h2 className="text-3xl font-bold mb-12">Experience</h2>
@@ -61,7 +42,6 @@ export default function Experience() {
               <div>
                 <motion.h3
                   className="text-lg font-semibold text-foreground"
-                  whileHover={{ color: "var(--accent)" }}
                   transition={{ duration: 0.3 }}
                 >
                   {exp.role}

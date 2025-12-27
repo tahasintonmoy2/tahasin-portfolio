@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import gsap from "gsap"
-import { MapPin } from "lucide-react"
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { MapPin } from "lucide-react";
 
 export default function Hero() {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -15,7 +15,7 @@ export default function Hero() {
         y: 15,
         ease: "power3.out",
         delay: 0.5,
-      })
+      });
 
       gsap.from(".hero-buttons", {
         duration: 0.8,
@@ -23,11 +23,11 @@ export default function Hero() {
         y: 20,
         ease: "power3.out",
         delay: 0.6,
-      })
-    }, containerRef)
+      });
+    }, containerRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={containerRef} className="px-8 md:px-12 pt-24 max-w-4xl">
@@ -38,35 +38,28 @@ export default function Hero() {
           </h1>
         </div>
 
-        <div className="hero-subtitle overflow-hidden">
-          <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            I design and build full-stack web applications that work beautifully and perform reliably. Frontend
-            expertise in React and Next.js creates smooth, responsive user experiences. Backend mastery with Java Spring
-            Boot ensures scalable, secure, and maintainable systems. Let&apos;s bring your vision to life with clean code and
-            thoughtful architecture.
-          </p>
-        </div>
-
         <div className="hero-location flex items-center gap-2 text-sm text-muted-foreground">
-          <MapPin className="size-4"/>
+          <MapPin className="size-4" />
           Based in Dhaka, Bangladesh
         </div>
 
         <div className="hero-buttons flex gap-4 pt-4">
           <a
-            href="#contact"
-            className="px-6 py-3 bg-accent text-accent-foreground rounded font-medium hover:opacity-90 transition-opacity"
+            href="https://g89awrkuury5wuee.public.blob.vercel-storage.com/Resume.pdf"
+            target="_blank"
+            download="Resume_Tahasin_Tonmoy.pdf"
+            className="px-6 py-2 bg-accent text-accent-foreground rounded font-medium hover:opacity-90 transition-opacity"
           >
-            Get in touch
+            Download Resume
           </a>
           <a
             href="#projects"
-            className="px-6 py-3 border border-border text-foreground rounded font-medium hover:border-accent transition-colors"
+            className="px-6 py-2 border border-border text-foreground rounded font-medium hover:border-accent transition-colors"
           >
             View work
           </a>
         </div>
       </div>
     </section>
-  )
+  );
 }

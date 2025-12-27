@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,53 +51,28 @@ export default function Skills() {
     },
   ];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".skill-category", {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 75%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 0.6,
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        ease: "power2.out",
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="px-8 md:px-12 py-16 max-w-4xl">
+    <section ref={sectionRef} className="px-8 md:px-12 pt-8 pb-16 max-w-4xl">
       <h2 className="text-3xl font-bold mb-12">Skills</h2>
       <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {skillCategories.map((group) => (
-          <motion.div
+          <div
             key={group.category}
-            className="skill-category"
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
           >
             <h3 className="text-sm font-semibold text-accent mb-4 uppercase tracking-wide">
               {group.category}
             </h3>
             <ul className="space-y-2">
-              {group.skills.map((skill, idx) => (
-                <motion.li
+              {group.skills.map((skill) => (
+                <li
                   key={skill}
                   className="text-muted-foreground cursor-default"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.05, duration: 0.4 }}
-                  viewport={{ once: true }}
                 >
                   {skill}
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

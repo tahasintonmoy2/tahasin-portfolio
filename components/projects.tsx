@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,10 +25,8 @@ export default function Projects() {
         "Stripe",
         "TypeScript",
       ],
-      link: "#",
+      projectLink: "#",
       actionLabel: "View Project",
-      actionLabelDisable: false,
-      disableButton: true,
       repoLink: "https://github.com/tahasintonmoy2/iqnixtv",
       repoActionLabel: "View source code",
     },
@@ -37,24 +35,20 @@ export default function Projects() {
       description:
         "Developed a comprehensive issue and project tracking application featuring task management, real-time collaboration, customizable workflows, and detailed reporting tools to enhance team productivity and project visibility, utilizing a modern tech stack for optimal performance and scalability, ensuring seamless user experience across devices.",
       technologies: ["Next.js", "TypeScript", "Appwrite", "REST APIs"],
-      link: "https://noze-one.vercel.app/auth/sign-in",
+      projectLink: "https://noze-one.vercel.app/auth/sign-in",
       actionLabel: "View Project",
       repoLink: "https://github.com/tahasintonmoy2/noze",
       repoActionLabel: "View source code",
-      actionLabelDisable: true,
-      disableButton: true,
     },
     {
       title: "Learning Management System",
       description:
         "Developed a robust learning management system (LMS) that enables educators to create, manage, and deliver online courses effectively. The platform includes features such as user authentication, course creation tools, multimedia content support, quizzes and assessments, progress tracking, and discussion forums to facilitate interactive learning experiences.",
       technologies: ["Next.js", "TypeScript", "PostgreSQL", "REST APIs"],
-      link: "#",
+      projectLink: "#",
       actionLabel: "View Project",
       repoLink: "https://github.com/tahasintonmoy2/lms",
       repoActionLabel: "View source code",
-      actionLabelDisable: false,
-      disableButton: true,
     },
     {
       title: "Content Management System (Currently in Development)",
@@ -67,10 +61,8 @@ export default function Projects() {
         "DynamoDB",
         "TypeScript",
       ],
-      link: "#",
+      projectLink: "#",
       actionLabel: "View Project",
-      actionLabelDisable: false,
-      disableButton: true,
       repoLink: "https://github.com/tahasintonmoy2/iqnixtv-cms",
       repoActionLabel: "View source code",
     },
@@ -134,20 +126,16 @@ export default function Projects() {
               ))}
             </div>
             <div className="mt-4 flex gap-2">
-              <Link href={project.link} target="_blank">
-                <button
-                  className="px-2 py-1 bg-accent text-card rounded font-medium cursor-pointer flex items-center gap-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={project.actionLabelDisable !== true}
-                >
-                  {project.actionLabel}
-                  <ExternalLink className="size-4" />
-                </button>
-              </Link>
+              {project.projectLink !== "#" && (
+                <Link href={project.projectLink} target="_blank">
+                  <button className="px-2 py-1 bg-accent text-card rounded font-medium cursor-pointer flex items-center gap-x-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                    {project.actionLabel}
+                    <ExternalLink className="size-4" />
+                  </button>
+                </Link>
+              )}
               <Link href={project.repoLink} target="_blank">
-                <button
-                  className="px-2 py-1 bg-accent text-card rounded font-medium cursor-pointer flex items-center gap-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={project.disableButton !== true}
-                >
+                <button className="px-2 py-1 bg-accent text-card rounded font-medium cursor-pointer flex items-center gap-x-2 disabled:opacity-50 disabled:cursor-not-allowed">
                   {project.repoActionLabel}
                   <ExternalLink className="size-4" />
                 </button>
