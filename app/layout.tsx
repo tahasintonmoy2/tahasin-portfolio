@@ -4,7 +4,6 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import type React from "react";
-//@ts-expect-error import localFont from "next/font/local";
 import "./globals.css";
 
 const lin = Roboto({ subsets: ["latin"], weight: ["400"] });
